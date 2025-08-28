@@ -5,7 +5,7 @@
   }
 
   body {
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     background: #f2f4f7;
     color: #1f1f1f;
     display: flex;
@@ -144,7 +144,7 @@
   }
 
   .unlock-btn {
-    background: #14b8a6;;
+    background: #58ccf8;
     color: #ffffff;
     border: none;
     padding: 8px 14px;

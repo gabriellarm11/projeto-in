@@ -5,7 +5,7 @@
   }
 
   body {
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     background: #f2f4f7;
     color: #1f1f1f;
     display: flex;
@@ -37,7 +37,7 @@
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    border-bottom: 1px solid  #EF2F7E;
+    border-bottom: 1px solid  black;
   }
 
   .filters button {
@@ -85,7 +85,7 @@
     position: absolute;
     top: 14px;
     right: 14px;
-    background: #14b8a6;; 
+    background: #58ccf8;; 
     color: #ffffff;
     font-size: 0.75rem;
     font-weight: 600;
@@ -144,7 +144,7 @@
   }
 
   .unlock-btn {
-    background: #14b8a6;;
+    background: #58ccf8;
     color: #ffffff;
     border: none;
     padding: 8px 14px;

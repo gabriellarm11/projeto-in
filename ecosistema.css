@@ -1,3 +1,10 @@
+:root {
+  --primary: #EF2F7E;
+  --bg-light: #f9f9f9;
+  --text-dark: #333;
+  --border: #ddd;
+}
+
 /* Reset básico */
 * {
   margin: 0;
@@ -6,13 +13,13 @@
 }
 
 body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  color: #333;
-  background-color: #f9f9f9;
+  font-family: 'Inter', sans-serif;
+  color: black;
+  background-color: white;
   line-height: 1.6;
 }
 
-/* Layout */
+/* Layout geral */
 .wrap {
   max-width: 1100px;
   margin: 0 auto;
@@ -21,27 +28,188 @@ body {
 
 /* Header */
 header {
-  background: #f34383;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* garante responsividade */
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border);
+  gap: 1rem;
+}
+
+.logo img {
+  max-width: 180px; /* tamanho máximo da logo */
+  width: 100%;      /* ocupa até o tamanho máximo */
+  height: auto;     /* mantém proporção */
+  display: block;   /* remove espaços indesejados */
+  margin: 0;
+  padding: 0;
+}
+
+/* Navegação */
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* horizontal */
+  gap: 20px; /* espaçamento entre itens */
+}
+
+ul li a {
+  text-decoration: none;
+  color: #333; /* cor normal */
+  padding: 5px 0;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+ul li a:hover {
+  color: #EF2F7E; /* cor ao passar o mouse */
+  border-bottom: 2px solid #EF2F7E; /* linha ao passar o mouse */
+}
+
+ul li a.active {
+  border-bottom: 2px solid #EF2F7E; /* linha fixa no ativo */
+  color: #000; /* cor do ativo */
+}
+
+/* Ações */
+.actions {
+  display: flex;
+  gap: 1rem;
+  border: 1px solid #EF2F7E ;
+}
+
+/* Classe .active para borda */
+.active {
+  border-bottom: 2px solid #EF2F7E;
+  padding-bottom: 2px;
+}
+
+/* Botões */
+.btn {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--primary);
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  background: white;
+  color: #EF2F7E;
+  border: none;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.btn.primary {
+  background: var(--primary);
   color: white;
-  padding: 60px 20px 40px;
-  text-align: center;
+  border: 1px solid var(--primary);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
 }
 
-.centralizada{
-  text-align: center;
-  padding: 40px 20px;
+.btn:hover {
+  opacity: 0.5;
+  background: #ffe1eb;
 }
 
-.centralizada img {
-  max-width: 100%;
+.btn.alt {
+  background: #58ccf8;
+  color: white;
+  border: none;
+  padding: 12px 60px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn.alt:hover {
+  background: #3bb9e4;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  display: block;
-  margin: 0 auto;
+  font-size: large;
 }
 
+.hero-img {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-img img {
+  max-width: 550px;
+  width: 80%;
+}
+
+.hero-text {
+  flex: 1;
+  font-family: 'Raleway', sans-serif;
+  width: auto;
+}
+
+.hero-text h2 {
+  font-size: 4rem;
+  padding-bottom: 100px;
+}
+
+.hero-text span {
+  color: var(--primary);
+  font-family: 'Roboto', sans-serif;
+  border-bottom: 1px solid var(--border);
+  font-weight: bold;
+}
+
+/* Barra de busca */
+.search-bar {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 1rem;
+  max-width: 500px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  font-size: 1rem;
+}
+
+.search-bar button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0 2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Marcas e textos */
 .marca {
   font-size: 28px;
   font-weight: bold;
@@ -60,11 +228,11 @@ header p {
   margin: 0 auto 30px;
 }
 
-.email a{
-  color: #f34383;
+.email a {
+  color: #EF2F7E;
 }
 
-/* Botões */
+/* Botões adicionais (CTA) */
 .cta {
   display: flex;
   gap: 16px;
@@ -72,40 +240,10 @@ header p {
   flex-wrap: wrap;
 }
 
-.btn {
-  background: white;
-  color: #f34383;
-  padding: 12px 24px;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-  border: none;
-}
-
-.btn:hover {
-  background: #ffe1eb;
-}
-
-.btn.alt {
-  background: #58ccf8;
-  color: white;
-  border: none;
-  padding: 12px 60px;
-  border-radius: 4px;
- 
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.btn.alt:hover {
-  background: #3bb9e4;
-}
-
 /* Títulos */
 h2 {
   font-size: 28px;
-  color: #f34383;
+  color: #EF2F7E;
   margin-bottom: 10px;
 }
 
@@ -145,7 +283,7 @@ h3 {
 }
 
 .card h3 {
-  color: #f34383;
+  color: #EF2F7E;
 }
 
 /* Etapas numeradas */
@@ -179,7 +317,7 @@ h3 {
 /* Tags */
 .tag {
   display: inline-block;
-  background: #f34383;
+  background: #EF2F7E;
   color: white;
   padding: 4px 10px;
   border-radius: 12px;
@@ -207,7 +345,7 @@ h3 {
 
 .metric strong {
   font-size: 24px;
-  color: #f34383;
+  color: #EF2F7E;
   display: block;
 }
 
@@ -215,7 +353,7 @@ h3 {
 .faq details {
   background: white;
   padding: 16px;
-  border-left: 4px solid #f34383;
+  border-left: 4px solid #EF2F7E;
   margin-bottom: 10px;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
@@ -233,14 +371,17 @@ h3 {
 
 /* Rodapé */
 footer {
-  background: #f34383;
-  color: white;
   text-align: center;
-  padding: 30px 20px;
-  font-size: 14px;
+  padding: 2rem 1rem;
+  background: var(--bg-light);
+  color: #888;
+  background-color: #e7e5e5;
+  margin-top: 2rem;
 }
 
-/* Responsivo para tablets e celulares */
+/* Responsividade */
+
+/* Tablets e dispositivos médios */
 @media (max-width: 768px) {
   .cols-2,
   .cols-3 {
@@ -266,8 +407,61 @@ footer {
   footer {
     font-size: 13px;
   }
+
+  /* Ajustes para nav e hero */
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .hero-text,
+  .hero-img {
+    flex: unset;
+    width: 100%;
+  }
+
+  .hero-text h2 {
+    font-size: 2.2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .hero-img img {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 1rem;
+  }
+
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .search-bar input,
+  .search-bar button {
+    width: 100%;
+  }
+
+  .search-bar button {
+    padding: 1rem;
+  }
 }
 
+/* Celulares e telas pequenas */
 @media (max-width: 480px) {
   header h1 {
     font-size: 20px;
@@ -291,5 +485,15 @@ footer {
 
   .email {
     word-break: break-word;
+  }
+
+  /* Ajuste para botões empilhados */
+  .cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn.alt {
+    padding: 12px 24px;
   }
 }
